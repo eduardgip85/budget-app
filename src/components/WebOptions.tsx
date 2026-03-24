@@ -23,16 +23,22 @@ function WebOptions({
         <div className="flex items-center gap-3">
           <button
             type="button"
-            onClick={onDecreasePages}
-            className="h-8 w-8 rounded-md border"
+            onClick={(e)=> {
+                e.stopPropagation()
+                onDecreasePages()
+            }}
+            className="h-8 w-8 rounded-md border hover:bg-neutral-500"
           >
             -
           </button>
           <span className="min-w-6 text-center">{pages}</span>
           <button
             type="button"
-            onClick={onIncreasePages}
-            className="h-8 w-8 rounded-md border"
+            onClick={(e)=> {
+                e.stopPropagation()
+                onIncreasePages()
+            }}
+            className="h-8 w-8 rounded-md border hover:bg-neutral-500"
           >
             +
           </button>
@@ -45,16 +51,22 @@ function WebOptions({
         <div className="flex items-center gap-3">
           <button
             type="button"
-            onClick={onDecreaseLanguages}
-            className="h-8 w-8 rounded-md border"
+            onClick={(e)=> {
+                e.stopPropagation()
+                onDecreaseLanguages()
+            }}
+            className="h-8 w-8 rounded-md border hover:bg-neutral-500"
           >
             -
           </button>
           <span className="min-w-6 text-center">{languages}</span>
           <button
             type="button"
-            onClick={onIncreaseLanguages}
-            className="h-8 w-8 rounded-md border"
+            onClick={(e)=> {
+                e.stopPropagation()
+                onIncreaseLanguages()
+            }}
+            className="h-8 w-8 rounded-md border hover:bg-neutral-500"
           >
             +
           </button>
