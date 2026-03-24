@@ -18,7 +18,8 @@ function ServiceCard({
 }: ServiceCardProp) {
     return(
         <article
-            className={`flex flex-col min-h-[160px] items-center justify-center rounded-md p-4 ${
+            onClick={onToggle}
+            className={`flex flex-col min-h-[160px] items-center justify-center rounded-md p-4 cursor-pointer ${
                 isSelected
                     ? `border-2 border-blue-300 bg-neutral-300`
                     : `bg-neutral-400`
@@ -32,17 +33,6 @@ function ServiceCard({
 
                 <div className="flex flex-col items-end gap-3">
                     <span className="text-3xl font-bold">{price}</span>
-
-                    <label className="flex cursor-pointer items-center gap-2 text-sm">
-                        <input 
-                            type="checkbox"
-                            checked={isSelected}
-                            onChange={onToggle} 
-                        />
-
-                        Afegir
-
-                    </label>
                 </div>
 
             </div>

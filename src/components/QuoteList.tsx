@@ -1,15 +1,18 @@
-type Quote = {
-    id: string
-    name: string
-    services: string[]
-    total: number
-}
+import { Link } from "react-router-dom"
+import type { Quote } from '../types/quote'
+import type { SortBy, SortDirection } from "../types/sort"
 
 type QuoteListProps = {
     quotes: Quote[]
+    searchTerm: string
+    sortBy: SortBy
+    sortDirection: SortDirection
+    onSearchChange: (value:string) => void
+    onSortByName: () => void
+    onSortByTotal: () => void
 }
 
-function QuoteList ({ quotes }: QuoteListProps) {
+function QuoteList ({ quotes, searchTerm, sortBy, sortDirection, onSearchChange, onSortByName, onSortByTotal }: QuoteListProps) {
     return(
         <section className="border-t border-neutral-500 pt-6">
 
@@ -22,13 +25,27 @@ function QuoteList ({ quotes }: QuoteListProps) {
                 <input 
                     type="text"
                     placeholder="Cercar..."
+                    value={searchTerm}
+                    onChange={(e) => onSearchChange(e.target.value)}
                     className="w-full rounded-md bg-white px-3 py-2 shadow-sm outline-none" 
                     />
 
                 <div className="flex items-center gap-2">
 
-                    <button className="rounded-md bg-white px-3 py-2 text-sm font-medium shadow-sm">Import</button>
-                    <button className="rounded-md bg-white px-3 py-2 text-sm font-medium shadow-sm">Nom</button>
+                    <button 
+                        type="button"
+                        className="rounded-md bg-white px-3 py-2 text-sm font-medium shadow-sm cursor-pointer hover:bg-neutral-300"
+                        onClick={onSortByTotal}
+                    >
+                        Import {sortBy === 'total' ? (sortDirection === 'asc' ? '↑' : '↓') : ''}
+                    </button>
+                    <button 
+                        type="button"
+                        className="rounded-md bg-white px-3 py-2 text-sm font-medium shadow-sm cursor-pointer hover:bg-neutral-300"
+                        onClick={onSortByName}
+                    >
+                        Nom {sortBy === 'name' ? (sortDirection === 'asc' ? '↑' : '↓') : ''}
+                    </button>
 
                 </div>
             </div>
@@ -40,29 +57,31 @@ function QuoteList ({ quotes }: QuoteListProps) {
                 )}
 
                 {quotes.map((quote) => (
-                    <article
-                        key={quote.id}
-                        className="rounded-md bg-white p-4 shadow-sm"
-                    >
-                        <div className="flex justify-between">
-                            <span className="font-medium">{quote.name}</span>
+                    <Link to={`/budget/${quote.id}`}>
+                        <article
+                            key={quote.id}
+                            className="rounded-md bg-white p-4 shadow-sm"
+                            >
+                            <div className="flex justify-between">
+                                <span className="font-medium">{quote.name}</span>
 
-                                <div className="flex flex-wrap gap-2">
-                                    {quote.services.map((s) => ( 
-                                        <span 
+                                    <div className="flex flex-wrap gap-2">
+                                        {quote.services.map((s) => ( 
+                                            <span 
                                             key={s}
                                             className="rounded-full bg-neutral-200 px-2 py-1 text-xs font-medium"
-                                        >
-                                            {s}
-                                        </span>
-                                    ))}
-                                </div>
+                                            >
+                                                {s}
+                                            </span>
+                                        ))}
+                                    </div>
 
-                            <span className="font-bold">{quote.total}€</span>
-                        </div>
+                                <span className="font-bold">{quote.total}€</span>
+                            </div>
 
 
-                    </article>
+                        </article>
+                    </Link>
                 ))}
             </div>
         </section>
