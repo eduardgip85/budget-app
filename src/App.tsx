@@ -11,6 +11,7 @@ const EXTRA_PRICE = 30
 
 function App() {
 
+  // seo/ads/web part
   const [seoSelected, setSeoSelected] = useState(false)
   const [adsSelected, setAdsSelected] = useState(false)
   const [webSelected, setWebSelected] = useState(false)
@@ -38,6 +39,57 @@ function App() {
 
   const increaseLanguages = () => {
     setLanguages((prev) => prev + 1)
+  }
+
+  //form part
+  const [name, setName] = useState(``)
+  const [phone, setPhone] = useState(``)
+  const [email, setEmail] = useState(``)
+
+  type Quote = {
+    id: string
+    name: string
+    phone: string
+    email: string
+    services: string[]
+    total: number
+    date: string
+  }
+
+  const [quotes, setQuotes ] = useState<Quote[]>([])
+
+  const handleSubmit = () => {
+
+    if(!name || !phone || !email){
+      alert('Omple tots els camps')
+      return
+    }
+
+    if(!seoSelected && !adsSelected && !webSelected){
+      alert('Selecciona almenys un servei')
+      return
+    }
+
+    const services = []
+    if(seoSelected) services.push('SEO')
+    if(adsSelected) services.push('ADS')
+    if(webSelected) services.push('WEB')
+
+    const newQuote: Quote = {
+      id: crypto.randomUUID(),
+      name, phone, email, services, total,
+      date: new Date().toISOString(),
+    }
+
+    setQuotes((prev) => [...prev, newQuote])
+
+    setName(``)
+    setPhone(``)
+    setEmail(``)
+    setSeoSelected(false)
+    setAdsSelected(false)
+    setWebSelected(false)
+
   }
 
   return (
@@ -92,9 +144,17 @@ function App() {
           <h2 className="text-2xl font-medium">Pressupost total: {total} €</h2>
         </section>
 
-        <QuoteForm></QuoteForm>
+        <QuoteForm
+          name={name}
+          phone={phone}
+          email={email}
+          onNameChange={setName}
+          onPhoneChange={setPhone}
+          onEmailChange={setEmail}
+          onSubmit={handleSubmit}
+        />
 
-        <QuoteList></QuoteList>
+        <QuoteList quotes={quotes} />
 
       </div>
     </main>
