@@ -27,7 +27,7 @@ function QuoteList ({ quotes, searchTerm, sortBy, sortDirection, onSearchChange,
                     placeholder="Cercar..."
                     value={searchTerm}
                     onChange={(e) => onSearchChange(e.target.value)}
-                    className="w-full rounded-md bg-white px-3 py-2 shadow-sm outline-none" 
+                    className="w-full rounded-md bg-white px-3 py-2 shadow-sm outline-green-300" 
                     />
 
                 <div className="flex items-center gap-2">
@@ -60,7 +60,7 @@ function QuoteList ({ quotes, searchTerm, sortBy, sortDirection, onSearchChange,
                     <Link to={`/budget/${quote.id}`}>
                         <article
                             key={quote.id}
-                            className="rounded-md bg-white p-4 shadow-sm"
+                            className="rounded-md bg-white p-4 shadow-green-500/50 shadow-md hover:bg-green-100"
                             >
                             <div className="flex justify-between">
                                 <span className="font-medium">{quote.name}</span>

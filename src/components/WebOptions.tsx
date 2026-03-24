@@ -18,7 +18,7 @@ function WebOptions({
     return(
     <div className="flex flex-col gap-4 border-t pt-4">
       <div className="flex items-center justify-between">
-        <span className="text-sm font-medium">Número de pàgines:</span>
+        <span className="text-sm font-medium pr-3">Número de pàgines: </span>
 
         <div className="flex items-center gap-3">
           <button
@@ -29,7 +29,7 @@ function WebOptions({
             }}
             className="h-8 w-8 rounded-md border hover:bg-neutral-500"
           >
-            -
+         -
           </button>
           <span className="min-w-6 text-center">{pages}</span>
           <button

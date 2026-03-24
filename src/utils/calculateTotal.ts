@@ -15,8 +15,8 @@ export function calculateTotal({
 }: Params) {
   const SEO_PRICE = 300
   const ADS_PRICE = 400
-  const WEB_PRICE = 500
-  const EXTRA_PRICE = 30
+  const WEB_PRICE = 600
+  const EXTRA_PRICE = 45
 
   const webExtra = pages * EXTRA_PRICE - EXTRA_PRICE + languages * EXTRA_PRICE - EXTRA_PRICE
 
