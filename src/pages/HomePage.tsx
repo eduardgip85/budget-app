@@ -9,8 +9,8 @@ import type { Quote } from "../types/quote"
 import { calculateTotal } from "../utils/calculateTotal"
 
 const SEO_PRICE = 300
-const ADS_PRICE = 500
-const WEB_PRICE = 400
+const ADS_PRICE = 400
+const WEB_PRICE = 600
 
 function HomePage() {
 
@@ -165,26 +165,26 @@ function HomePage() {
             </h1>
             </header>
 
-            <section className="rounded-md bg-neutral-200 p-4">
-            <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+            <section className="rounded-md bg-neutral-200 p-4 shadow-green-500/50 shadow-md">
+            <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 ">
 
                 <ServiceCard 
                 title="SEO"
-                description="Seo d'una pagina web"
+                description="Programacio d'una web responsive completa"
                 price={SEO_PRICE}
                 isSelected={seoSelected}
                 onToggle={()=> setSeoSelected((prev) => !prev)} 
                 />
                 <ServiceCard 
                 title="ADS"
-                description="ADS d'una pagina web"
+                description="Programacio d'una web responsive completa"
                 price={ADS_PRICE}
                 isSelected={adsSelected}
                 onToggle={()=> setAdsSelected((prev) => !prev)} 
                 />
                 <ServiceCard 
                 title="WEB"
-                description="WEB d'una pagina web"
+                description="Programacio d'una web responsive completa"
                 price={WEB_PRICE}
                 isSelected={webSelected}
                 onToggle={()=> setWebSelected((prev) => !prev)} 
@@ -204,8 +204,8 @@ function HomePage() {
             </div>
             </section>
 
-            <section className="mx-auto w-full max-w-md rounded-md bg-white px-4 py-4 shadow-sm">
-            <h2 className="text-2xl font-medium">Pressupost total: {total} €</h2>
+            <section className="flex flex-col items-center mx-auto w-full max-w-md rounded-md bg-white px-4 py-4 shadow-sm">
+                <h2 className="text-2xl font-medium">Pressupost Total:  {total} €</h2>
             </section>
 
             <QuoteForm

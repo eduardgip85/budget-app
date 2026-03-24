@@ -19,20 +19,20 @@ function ServiceCard({
     return(
         <article
             onClick={onToggle}
-            className={`flex flex-col min-h-[160px] items-center justify-center rounded-md p-4 cursor-pointer ${
+            className={`flex flex-col min-h-[160px] items-center justify-center rounded-md p-4 cursor-pointer shadow-xl/20 hover:bg-green-100 ${
                 isSelected
-                    ? `border-2 border-blue-300 bg-neutral-300`
-                    : `bg-neutral-400`
+                    ? `border-2 border-green-500 bg-green-100`
+                    : `bg-neutral-100`
             }`}
         >
             <div className="flex items-start justify-between gap-4">
                 <div>
-                    <h2 className={`text-3xl font-medium ${isSelected ? `text-black` : `text-white`}`}>{title}</h2>
+                    <h2 className={`text-3xl font-medium text-black`}>{title}</h2>
                     <p className="mt-2 text-sm text-neutral-600">{description}</p>
                 </div>
 
                 <div className="flex flex-col items-end gap-3">
-                    <span className="text-3xl font-bold">{price}</span>
+                    <span className="text-3xl font-bold">{price}€</span>
                 </div>
 
             </div>
