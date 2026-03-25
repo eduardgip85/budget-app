@@ -39,7 +39,7 @@ function HomePage() {
 
     //form part
     const [name, setName] = useState(``)
-    const [phone, setPhone] = useState(``)
+    const [phone, setPhone] = useState<number>(0)
     const [email, setEmail] = useState(``)
 
     const [quotes, setQuotes ] = useState<Quote[]>([])
@@ -88,7 +88,7 @@ function HomePage() {
         })
 
         setName(``)
-        setPhone(``)
+        setPhone(0)
         setEmail(``)
         setSeoSelected(false)
         setAdsSelected(false)

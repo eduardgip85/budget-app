@@ -1,7 +1,7 @@
 export type Quote = {
   id: string
   name: string
-  phone: string
+  phone: number
   email: string
   total: number
   services: string[]

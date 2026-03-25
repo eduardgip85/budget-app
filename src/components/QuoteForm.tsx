@@ -1,9 +1,9 @@
 type QuoteFormProps = {
     name: string
-    phone: string
+    phone: number
     email: string
     onNameChange: (value: string) => void
-    onPhoneChange: (value: string) => void
+    onPhoneChange: (value: number) => void
     onEmailChange: (value: string) => void
     onSubmit: ()=> void
 }
@@ -45,11 +45,11 @@ function QuoteForm({
                         />
 
                     <input 
-                        type="text" 
+                        type="number" 
                         placeholder="Telefon"
                         className="text-center w-full rounded-md bg-white px-3 py-2 outline-green-200"
                         value={phone}
-                        onChange={(e)=> onPhoneChange(e.target.value)}
+                        onChange={(e)=> onPhoneChange(Number(e.target.value))}
                     />
 
                     <input 
