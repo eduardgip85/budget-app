@@ -1,73 +1,82 @@
-# React + TypeScript + Vite
+# 💸 Budget App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicació web desenvolupada amb **React + TypeScript + Vite** per crear, gestionar i compartir pressupostos de serveis digitals.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Funcionalitats
 
-## React Compiler
+* Selecció de serveis:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+  * SEO
+  * Ads
+  * Web (configurable)
+* Configuració de Web:
 
-## Expanding the ESLint configuration
+  * Nombre de pàgines
+  * Idiomes
+* Càlcul de pressupost en temps real
+* Formulari de client amb validació
+* Guardat de pressupostos amb **localStorage**
+* Llistat de pressupostos:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+  * Cerca per nom, servei o import
+  * Ordenació per nom o import (asc/desc)
+* Vista detallada de cada pressupost
+* URL única compartible (`/budget/:id`)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🛠️ Tecnologies
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+* React
+* TypeScript
+* Vite
+* Tailwind CSS
+* React Router DOM
+
+---
+
+## 📁 Estructura del projecte
+
+```
+src/
+  components/    → components reutilitzables
+  pages/         → pàgines (Home, Detail)
+  types/         → tipus TypeScript
+  utils/         → funcions auxiliars
+  data/          → dades estàtiques
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ▶️ Instal·lació
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
+
+---
+
+## 🧠 Conceptes aplicats
+
+* Gestió d’estat amb `useState`
+* Components controlats (forms)
+* Render condicional
+* Derivació d’estat (càlcul total)
+* Routing amb React Router
+* Persistència amb localStorage
+* Arquitectura modular
+
+---
+
+## 📌 Notes
+
+Aquest projecte s’ha desenvolupat amb finalitat d’aprenentatge, aplicant bones pràctiques de frontend modern.
+
+---
+
+## ✨ Autor
+
+Eduard Goma
