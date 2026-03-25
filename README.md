@@ -45,7 +45,6 @@ src/
   pages/         → pàgines (Home, Detail)
   types/         → tipus TypeScript
   utils/         → funcions auxiliars
-  data/          → dades estàtiques
 ```
 
 ---
@@ -71,12 +70,3 @@ npm run dev
 
 ---
 
-## 📌 Notes
-
-Aquest projecte s’ha desenvolupat amb finalitat d’aprenentatge, aplicant bones pràctiques de frontend modern.
-
----
-
-## ✨ Autor
-
-Eduard Goma
