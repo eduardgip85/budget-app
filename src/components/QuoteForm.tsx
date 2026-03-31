@@ -19,7 +19,7 @@ function QuoteForm({
 }: QuoteFormProps){
     return (
         <section
-            className="rounded-md bg-neutral-200 p-4 shadow-green-500/50 shadow-md"
+            className="rounded-md bg-neutral-200 p-4 shadow-green-800/50 shadow-md"
         >
             <h2 
                 className="mb-4 text-center text-2xl font-medium"
@@ -62,7 +62,7 @@ function QuoteForm({
 
                     <button
                         type="submit"
-                        className="mx-auto mt-2 rounded-md bg-green-500 px-6 py-2 text-white hover:bg-green-400 cursor-pointer"
+                        className="mx-auto mt-2 rounded-md bg-green-800 px-6 py-2 text-white hover:bg-green-400 cursor-pointer"
                         >
                         Enviar
                     </button>

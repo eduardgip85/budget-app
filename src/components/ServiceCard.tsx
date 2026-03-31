@@ -21,7 +21,7 @@ function ServiceCard({
             onClick={onToggle}
             className={`flex flex-col min-h-[160px] items-center justify-center rounded-md p-4 cursor-pointer shadow-xl/20 hover:bg-green-100 ${
                 isSelected
-                    ? `border-2 border-green-500 bg-green-100`
+                    ? `border-2 border-green-800 bg-green-100`
                     : `bg-neutral-100`
             }`}
         >

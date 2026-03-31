@@ -33,6 +33,7 @@ function QuoteList ({ quotes, searchTerm, sortBy, sortDirection, onSearchChange,
                 <div className="flex items-center gap-2">
 
                     <button 
+                        aria-label="sort by import"
                         type="button"
                         className="rounded-md bg-white px-3 py-2 text-sm font-medium shadow-sm cursor-pointer hover:bg-neutral-300"
                         onClick={onSortByTotal}
@@ -40,6 +41,7 @@ function QuoteList ({ quotes, searchTerm, sortBy, sortDirection, onSearchChange,
                         Import {sortBy === 'total' ? (sortDirection === 'asc' ? '↑' : '↓') : ''}
                     </button>
                     <button 
+                        aria-label="sort by name"
                         type="button"
                         className="rounded-md bg-white px-3 py-2 text-sm font-medium shadow-sm cursor-pointer hover:bg-neutral-300"
                         onClick={onSortByName}
@@ -57,10 +59,9 @@ function QuoteList ({ quotes, searchTerm, sortBy, sortDirection, onSearchChange,
                 )}
 
                 {quotes.map((quote) => (
-                    <Link to={`/budget/${quote.id}`}>
-                        <article
-                            key={quote.id}
-                            className="rounded-md bg-white p-4 shadow-green-500/50 shadow-md hover:bg-green-100"
+                    <Link key={quote.id} to={`/budget/${quote.id}`}>
+                        <article 
+                            className="rounded-md bg-white p-4 shadow-green-800/50 shadow-md hover:bg-green-100"
                             >
                             <div className="flex justify-between">
                                 <span className="font-medium">{quote.name}</span>
